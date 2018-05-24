@@ -1,0 +1,123 @@
+<scroll-view class='body' scroll-y='true'>
+  <view class='article'>
+    <view class="search-view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(39, 36, 36, 1), rgba(39, 36, 36, 0.3))' :( scrollTop<200 ? 'rgba(39, 36, 36,'+(scrollTop/400+0.3) +')' : 'rgba(39, 36, 36,1)')  }} ">
+      <view class="serarch-content">
+        <image src="../../assets/images/search-pic.png" class="search-icon" />
+        <input placeholder="请输入搜索内容" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' bindconfirm='toSearch'>
+        </input>
+        <button class='search-btn' bindtap="toSearch">搜索
+        </button>
+      </view>
+    </view>
+    <scroll-view class='body' scroll-y='true' bindscrolltolower="onReachBottom">
+      <view class='credit-agency first' bindtap='goDetail'>
+        <view class='agency-company'>
+          <text>城市</text>
+          <text>深圳</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权标题</text>
+          <text>美术著作权</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权内容</text>
+          <text>相关描述。。。</text>
+        </view>
+        <view class='agency-company no-border'>
+          <text>创建时间</text>
+          <text>2018-01-01 12:36:22</text>
+        </view>
+      </view>
+      <view class='credit-agency' bindtap='goDetail'>
+        <view class='agency-company'>
+          <text>城市</text>
+          <text>深圳</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权标题</text>
+          <text>美术著作权</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权内容</text>
+          <text>相关描述。。。</text>
+        </view>
+        <view class='agency-company no-border'>
+          <text>创建时间</text>
+          <text>2018-01-01 12:36:22</text>
+        </view>
+      </view>
+       <view class='credit-agency' bindtap='goDetail'>
+        <view class='agency-company'>
+          <text>城市</text>
+          <text>深圳</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权标题</text>
+          <text>美术著作权</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权内容</text>
+          <text>相关描述。。。</text>
+        </view>
+        <view class='agency-company no-border'>
+          <text>创建时间</text>
+          <text>2018-01-01 12:36:22</text>
+        </view>
+      </view>
+       <view class='credit-agency' bindtap='goDetail'>
+        <view class='agency-company'>
+          <text>城市</text>
+          <text>深圳</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权标题</text>
+          <text>美术著作权</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权内容</text>
+          <text>相关描述。。。</text>
+        </view>
+        <view class='agency-company no-border'>
+          <text>创建时间</text>
+          <text>2018-01-01 12:36:22</text>
+        </view>
+      </view>
+       <view class='credit-agency' bindtap='goDetail'>
+        <view class='agency-company'>
+          <text>城市</text>
+          <text>深圳</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权标题</text>
+          <text>美术著作权</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权内容</text>
+          <text>相关描述。。。</text>
+        </view>
+        <view class='agency-company no-border'>
+          <text>创建时间</text>
+          <text>2018-01-01 12:36:22</text>
+        </view>
+      </view>
+       <view class='credit-agency' bindtap='goDetail'>
+        <view class='agency-company'>
+          <text>城市</text>
+          <text>深圳</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权标题</text>
+          <text>美术著作权</text>
+        </view>
+        <view class='agency-company'>
+          <text>版权内容</text>
+          <text>相关描述。。。</text>
+        </view>
+        <view class='agency-company no-border'>
+          <text>创建时间</text>
+          <text>2018-01-01 12:36:22</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</scroll-view>

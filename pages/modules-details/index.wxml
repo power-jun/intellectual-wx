@@ -1,0 +1,5 @@
+<scroll-view class='body' scroll-y='true'>
+  <view class='article'>
+    详情页面
+  </view>
+</scroll-view>
