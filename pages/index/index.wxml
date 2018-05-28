@@ -1,4 +1,4 @@
-<scroll-view class='body' scroll-y='true'>
+<view class='body' >
   <view class='article'>
     <view class="swiper-container">
       <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
@@ -18,13 +18,13 @@
     <view class='line-gray'></view>
     <view class='recommend'>服务项目</view>
     <view class='service-items'>
-      <navigator url='/pages/modules-list/index'>
-        <view class='up'>
-          <image src='../../assets/images/zhuanli.jpg' />
+      <view class='up'>
+        <navigator url='/pages/modules-list/index'>
+          <image src='../../assets/images/zhuanli.png' />
           <text>专利知识产权</text>
           <view class='layer'></view>
-        </view>
-      </navigator>
+        </navigator>
+      </view>
       <view class='down'>
         <view class='left'>
           <navigator url='/pages/modules-list/index'>
@@ -33,8 +33,6 @@
             <view class='layer'></view>
           </navigator>
         </view>
-
-
         <view class='right'>
           <navigator url='/pages/modules-list/index'>
             <image src='../../assets/images/shangbiao.jpg' />
@@ -49,7 +47,24 @@
     <view class='about-us'>
       <text>作为全球领先的游戏运营商、研发商,三七互娱以“传承中华文化精髓”为理念,积极推动国产游戏的全球化发展,同时积极布局影视、音乐、动漫及VR等领域作为全球领先的游戏运营商、研发商,三七互娱以“传承中华文化精髓”为理念,积极推动国产游戏的全球化发展,同时积极布局影视、音乐、动漫及VR等领域作为全球领先的游戏运营商、研发商,三七互娱以“传承中华文化精髓”为理念,积极推动国产游戏的全球化发展,同时积极布局影视、音乐、动漫及VR等领域</text>
     </view>
-     <!-- <view class="type-navbar">
+    <view class='line-gray'></view>
+    <view class='recommend'>联系我们</view>
+    <view class='contact-us'>
+      <view class='width: 100%;height: 350rpx;overflow:hidden=350rpx;'>
+      <map id="map" longitude="{{longitude}}" markers="{{markers}}" style="width: 100%; height: 350px;">
+      </map>
+      </view>
+      <view class='adress'>
+        <text>地址： 广东深圳深南大道</text>
+      </view>
+      <view class='adress'>
+        <text>电话： 185747443224</text>
+      </view>
+      <view class='adress call'>
+        <button>一键拨号</button>  
+      </view>
+    </view>
+    <!-- <view class="type-navbar">
       <view class="type-box">
         <view data-id='0' data-servicecode='BILL0017' class="type-navbar-item {{activeCategoryId == 0 ? 'type-item-on' : ''}}" bindtap="tabClick">
           版权
@@ -67,4 +82,4 @@
       </view>
     </view> -->
   </view>
-</scroll-view>
+</view>

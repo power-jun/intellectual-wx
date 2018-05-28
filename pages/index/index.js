@@ -11,7 +11,17 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    activeCategoryId: 0
+    activeCategoryId: 0,
+    latitude: 40.002607,
+    longitude: 116.487847,
+    markers: [{
+      iconPath: "../../img/marker_red.png",
+      id: 0,
+      latitude: 40.002607,
+      longitude: 116.487847,
+      width: 35,
+      height: 45
+    }]
   },
 
   swiperchange: function(e) {
