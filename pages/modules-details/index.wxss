@@ -1,1 +1,35 @@
-/* pages/modules-details/index.wxss */
+.body {
+  background: #fff;
+}
+
+.article {
+  padding: 30rpx;
+  font-size: 14px;
+}
+
+.article .title {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.article .cont {
+  text-indent: 10px;
+  line-height: 24px;
+  margin-bottom: 30rpx;
+}
+
+.article .city-date {
+  display: flex;
+  color: #7d7d7d;
+}
+
+.article .city-date text {
+  text-align: right;
+  flex: 1;
+}
+
+.article .city-date text:first-child {
+  text-align: left;
+}

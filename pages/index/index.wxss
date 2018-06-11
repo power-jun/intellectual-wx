@@ -114,7 +114,7 @@ swiper-item image {
 }
 
 .service-items .up {
-  height: 400rpx;
+  height: 350rpx;
   position: relative;
   margin-top: 20rpx;
   margin-bottom: 20rpx;
@@ -123,7 +123,7 @@ swiper-item image {
 .service-items .up image {
   display: inline-block;
   width: 100%;
-  height: 400rpx;
+  height: 350rpx;
   box-sizing: border-box;
 }
 
@@ -131,7 +131,7 @@ swiper-item image {
   display: inline-block;
   position: absolute;
   left: 250rpx;
-  top: 200rpx;
+  top: 150rpx;
   color: #fff;
   /* text-shadow: 1px 0.5px #fafafa; */
 }
@@ -146,6 +146,10 @@ swiper-item image {
   position: relative;
 }
 
+.service-items .left {
+  margin-right: 20rpx
+}
+
 .service-items .left image,
 .service-items .right image {
   display: inline-block;
@@ -156,7 +160,7 @@ swiper-item image {
 .service-items .left text,
 .service-items .right text {
   position: absolute;
-  left: 150rpx;
+  left: 80rpx;
   top: 160rpx;
   z-index: 200;
   color: #fff;

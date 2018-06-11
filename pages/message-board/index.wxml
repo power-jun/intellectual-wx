@@ -1,0 +1,24 @@
+<scroll-view class='body' scroll-y='true'>
+  <view class='article'>
+    <textarea placeholder="请输入留言" value='{{mesgVal}}' class='messages-input' maxlength="500" bindblur='msgInput'/>
+    <view class='btn-box submit-mesg'>
+      <button bindtap='submitMsg'>提交</button>  
+    </view>
+    <view class='huise'></view>
+    <view class='mesg-list'>
+      <view class='head'>power</view>
+      <view class='content'>留言板内容留言板内容留言板内容，留言板内容留言板内容留言板内容</view>
+      <view class='date'>2018-09-33 23:12:43</view>
+    </view>
+    <view class='mesg-list'>
+      <view class='head'>power</view>
+      <view class='content'>留言板内容留言板内容留言板内容，留言板内容留言板内容留言板内容</view>
+      <view class='date'>2018-09-33 23:12:43</view>
+    </view>
+    <view class='mesg-list'>
+      <view class='head'>power</view>
+      <view class='content'>留言板内容留言板内容留言板内容，留言板内容留言板内容留言板内容</view>
+      <view class='date'>2018-09-33 23:12:43</view>
+    </view>
+  </view>
+</scroll-view>

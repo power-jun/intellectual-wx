@@ -1,0 +1,46 @@
+.body {
+  background: #fff;
+}
+
+.new-cont {
+  height: 100%;
+  background: #fff;
+  padding-top: 40rpx;
+}
+
+.mesg-list {
+  font-size: 14px;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.mesg-list:last-child {
+  border: none;
+}
+
+.mesg-list .head {
+  font-size: 18px;
+  color: #333;
+}
+
+.mesg-list .content {
+  padding: 20rpx 0;
+  height: 80rpx;
+  text-indent: 10px;
+  line-height: 23px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.mesg-list .date {
+  font-size: 12px;
+  color: #7d7d7d;
+  text-align: right;
+}
+
+.hover-huise {
+  background: #fafafa;
+}

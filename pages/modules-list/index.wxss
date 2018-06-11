@@ -8,11 +8,11 @@
   height: 100rpx;
   background: gray;
   display: flex;
-  flex-direction: column;
+  
 }
 .serarch-content{
    background: white;
-   width:650rpx;
+   width:530rpx;
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -75,4 +75,27 @@
 
 .agency-company text:first-child {
   color: #7b8389;
-} 
+}
+
+.city-select {
+  display: block;
+  width: 150rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  border: 1px solid #fff;
+  background: #fff;
+  margin-top:20rpx;
+  margin-left: 15rpx;
+  font-size: 14px;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.city-select text:first-child {
+  margin-right: 10rpx;
+}
+
+.city-select text.icon::before {
+  margin-top: -3rpx;
+}

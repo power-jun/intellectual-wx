@@ -1,5 +1,12 @@
 <scroll-view class='body' scroll-y='true'>
   <view class='article'>
-    详情页面
+    <view class='title'>{{detailsData.title}}</view>
+    <view class='cont'>
+    {{detailsData.content}}
+    </view>
+    <view class='city-date'>
+      <text>{{detailsData.cityName}}</text>
+      <text>{{detailsData.createDate}}</text>
+    </view>
   </view>
 </scroll-view>

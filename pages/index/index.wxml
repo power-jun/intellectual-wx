@@ -19,24 +19,24 @@
     <view class='recommend'>服务项目</view>
     <view class='service-items'>
       <view class='up'>
-        <navigator url='/pages/modules-list/index'>
-          <image src='../../assets/images/zhuanli.png' />
-          <text>专利知识产权</text>
+        <navigator url='/pages/modules-list/index?type=copyright'>
+          <image src='../../assets/images/zhuanli.png'/>
+          <text>版权登记中心</text>
           <view class='layer'></view>
         </navigator>
       </view>
       <view class='down'>
         <view class='left'>
-          <navigator url='/pages/modules-list/index'>
-            <image src='../../assets/images/banquan1.jpg' />
-            <text>版  权</text>
+          <navigator url='/pages/modules-list/index?type=court'>
+            <image src='../../assets/images/court.png' />
+            <text>知识产权法院</text>
             <view class='layer'></view>
           </navigator>
         </view>
         <view class='right'>
-          <navigator url='/pages/modules-list/index'>
-            <image src='../../assets/images/shangbiao.jpg' />
-            <text>商  标</text>
+          <navigator url='/pages/modules-list/index?type=lawyer'>
+            <image src='../../assets/images/lawyer.png' />
+            <text>知识产权律师</text>
             <view class='layer'></view>
           </navigator>
         </view>
@@ -61,7 +61,7 @@
         <text>电话： 185747443224</text>
       </view>
       <view class='adress call'>
-        <button>一键拨号</button>  
+        <button>一键拨号</button>
       </view>
     </view>
     <!-- <view class="type-navbar">

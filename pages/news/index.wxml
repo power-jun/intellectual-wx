@@ -1,0 +1,11 @@
+<scroll-view class='body' scroll-y='true' bindscrolltolower="onReachBottom">
+  <view class='new-cont'>
+    <view class='mesg-list' hover-class='hover-huise' data-id='{{item.id}}' bindtap='goDetails' wx:for="{{newListData}}" wx:key="{{index}}">
+      <view class='head'>{{item.title}}</view>
+      <view class='content'>{{item.content}}</view>
+      <view class='date'>{{item.createDate}}</view>
+    </view>
+    <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>更多记录,敬请期待</view>
+    <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无记录</view>
+  </view>
+</scroll-view>

@@ -1,0 +1,11 @@
+<scroll-view class='body' scroll-y='true'>
+  <view class='new-details'>
+    <view class='title-new'>
+      <text>{{detailsData.title}}</text>
+    </view>
+    <view>
+      <text class='cont'>{{detailsData.content}}</text>
+    </view>
+    <view class='date'><text>{{detailsData.createDate}}</text></view>
+  </view>
+</scroll-view>
