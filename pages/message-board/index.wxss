@@ -1,7 +1,19 @@
 /* pages/message-board/index.wxss */
+.body {
+  background: #fff;
+  height: 100%;
+}
+
 .article {
   padding: 30rpx;
   background: #fff;
+}
+
+.tips {
+  text-align: right;
+  color: #f00;
+  font-size: 14px;
+  margin: 20rpx 0;
 }
 
 .messages-input {

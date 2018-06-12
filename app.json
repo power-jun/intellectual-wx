@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/message-board/index",
     "pages/news/index",
     "pages/modules-list/index",
     "pages/modules-details/index",
-    "pages/news-details/index",
-    "pages/index/index"
+    "pages/news-details/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

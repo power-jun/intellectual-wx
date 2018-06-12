@@ -3,7 +3,6 @@ page {
 }
 
 .body {
-  height: 100%;
   background-color: #f8f8f8;
   box-sizing: border-box;
 }
@@ -64,10 +63,8 @@ page {
   width: 100%;
   text-align: center;
   font-size: 22rpx;
-  padding-bottom: 48rpx;
-  padding-top: 20rpx;
+  padding: 40rpx 0;
   color: #7d7d7d;
-  background: #f4f4f4;
 }
 
 .no-datas {

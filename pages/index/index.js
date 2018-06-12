@@ -2,7 +2,6 @@ var app = getApp();
 
 Page({
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     imgUrls: [
       '../../assets/images/banner.jpg',
       '../../assets/images/banner1.jpg',
@@ -13,19 +12,19 @@ Page({
     interval: 3000,
     duration: 1000,
     activeCategoryId: 0,
-    latitude: 40.002607,
-    longitude: 116.487847,
+    latitude: 31.193236,
+    longitude: 121.423062,
     markers: [{
-      iconPath: "../../img/marker_red.png",
+      iconPath: "../../assets/images/marker_red.png",
       id: 0,
-      latitude: 40.002607,
-      longitude: 116.487847,
-      width: 35,
-      height: 45
+      latitude: 31.193236,
+      longitude: 121.423062,
+      width: 32,
+      height: 32
     }]
   },
 
-  swiperchange: function(e) {
+  swiperchange: function (e) {
     this.setData({
       swiperCurrent: e.detail.current
     })
@@ -46,11 +45,16 @@ Page({
   onLoad: function (options) {
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  calling: function () {
+    wx.makePhoneCall({
+      phoneNumber: '021-64734071',
+      success: function () {
+        console.log("拨打电话成功！")
+      },
+      fail: function () {
+        console.log("拨打电话失败！")
+      }
+    })
   },
 
   /**

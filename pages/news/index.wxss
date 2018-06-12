@@ -1,4 +1,5 @@
 .body {
+  height: 100%;
   background: #fff;
 }
 
@@ -10,7 +11,8 @@
 
 .mesg-list {
   font-size: 14px;
-  padding: 20rpx 30rpx;
+  margin: 0 30rpx;
+  padding: 20rpx 0 ;
   border-bottom: 1px solid #e5e5e5;
 }
 

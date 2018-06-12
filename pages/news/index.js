@@ -39,19 +39,18 @@ Page({
         wx.hideLoading();
 
         if (res.data.recordCount) {
-          // that.totalPage = res.data.totalPage || 1;
+          that.totalPage = res.data.totalPage;
 
-that.totalPage = 2
-
+          that.data.newListData = that.data.newListData.concat(res.data.items);
           that.setData({
             loadingMoreHidden: true,
             noDataHidden: true,
-            newListData: res.data.items
+            newListData: that.data.newListData
           });
 
           wx.setStorage({
             key: 'newsList',
-            data: res.data.items
+            data: that.data.newListData
           });
         } else {
           that.setData({

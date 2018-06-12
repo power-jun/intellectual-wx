@@ -5,7 +5,7 @@
       <view class='content'>{{item.content}}</view>
       <view class='date'>{{item.createDate}}</view>
     </view>
-    <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>更多记录,敬请期待</view>
-    <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无记录</view>
+    <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>没有更多新闻记录</view>
+    <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无新闻记录</view>
   </view>
 </scroll-view>

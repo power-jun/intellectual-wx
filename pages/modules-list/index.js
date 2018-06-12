@@ -9,6 +9,11 @@ Page({
   data: {
     scrollTop: "0",
     searchVal: '',
+    creditagencyName: '城市',
+    creditagency: [],
+    creditagencyCode: '',
+    creditagencyNameArry: [],
+    creditagencyCodeArry: [],
     loadingMoreHidden: true,
     noDataHidden: true,
     listData: []
@@ -19,9 +24,35 @@ Page({
    */
   onLoad: function (options) {
     this.type = options.type || 'copyright';
-    this.requestData(this.type);
     this.page = 1;
     this.totalPage = 1;
+    this.requestData(this.type);
+    this.requestCityData();
+  },
+
+  requestCityData() {
+    let that = this;
+
+    wx.request({
+      url: app.globalData.api + 'city/list.json',
+      method: 'POST',
+      success: function (res) {
+        let datas = res.data.data;
+        let creditagencyNameArry = [];
+        let creditagencyCodeArry = [];
+
+        for (let i = 0, len = datas.length; i < len; i++) {
+          creditagencyNameArry.push(datas[i].name);
+          creditagencyCodeArry.push(datas[i].id);
+        }
+
+        that.setData({
+          creditagency: datas,
+          creditagencyNameArry: creditagencyNameArry,
+          creditagencyCodeArry: creditagencyCodeArry
+        });
+      }
+    })
   },
 
   requestData(type) {
@@ -47,11 +78,12 @@ Page({
     let params = {
       pageIndex: this.page,
       sizePerPage: 10,
-      title: this.data.searchVal
+      title: this.data.searchVal,
+      cityId: this.data.creditagencyCode
     };
 
     wx.showLoading();
-
+    debugger
     wx.request({
       url: url,
       method: 'POST',
@@ -59,18 +91,20 @@ Page({
       success: function (res) {
         wx.hideLoading();
         if (res.data.recordCount) {
-          
-          that.totalPage = res.data.totalPage || 1;
+          debugger
+          that.totalPage = res.data.totalPage;
+
+          that.data.listData = that.data.listData.concat(res.data.items);
 
           that.setData({
             loadingMoreHidden: true,
             noDataHidden: true,
-            listData: res.data.items
+            listData: that.data.listData
           });
 
           wx.setStorage({
             key: 'modulesList',
-            data: res.data.items
+            data: that.data.listData
           });
         } else {
           that.setData({
@@ -82,7 +116,27 @@ Page({
     });
   },
 
+  bindCityChange: function (event) {
+    let index = event.detail.value;
+    let creditagencyName = this.data.creditagencyNameArry[index];
+    let creditagencyCode = this.data.creditagencyCodeArry[index];
+    let currentCreditagency = this.data.creditagency.filter(function (v, n) {
+      return v.id === creditagencyCode
+    });
+
+    this.setData({
+      creditagencyName: creditagencyName,
+      creditagencyCode: creditagencyCode,
+      listData: []
+    });
+    this.requestData(this.type);
+  },
+
   toSearch: function () {
+    this.setData({
+      listData: []
+    });
+
     this.requestData(this.type);
   },
 
