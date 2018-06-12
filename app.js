@@ -22,7 +22,7 @@ App({
 
     wx.getUserInfo({
       success: function (res) {
-        that.globalData.useInfo = res.rawData;
+        that.globalData.useInfo = JSON.parse(res.rawData);
       }
     });
   }

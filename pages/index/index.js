@@ -2,6 +2,7 @@ var app = getApp();
 
 Page({
   data: {
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     imgUrls: [
       '../../assets/images/banner.jpg',
       '../../assets/images/banner1.jpg',
@@ -43,6 +44,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              app.globalData.useInfo = res.userInfo;
+            }
+          })
+        }
+      }
+    })
   },
 
   calling: function () {
@@ -55,6 +68,10 @@ Page({
         console.log("拨打电话失败！")
       }
     })
+  },
+
+  bindGetUserInfo: function (e) {
+    app.globalData.useInfo = e.detail.userInfo;
   },
 
   /**

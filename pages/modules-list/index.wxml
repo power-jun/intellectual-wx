@@ -11,7 +11,7 @@
     </view>
       <view class="serarch-content">
         <image src="../../assets/images/search-pic.png" class="search-icon" />
-        <input placeholder="请输入搜索内容" value='{{searchVal}}' class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' bindconfirm='toSearch'>
+        <input placeholder="请输入搜索标题" value='{{searchVal}}' class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' bindconfirm='toSearch'>
         </input>
         <button class='search-btn' bindtap="toSearch">搜索
         </button>

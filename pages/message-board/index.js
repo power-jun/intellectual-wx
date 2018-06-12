@@ -74,7 +74,7 @@ Page({
       },
       method: 'POST',
       data: {
-        wxUserNickName: JSON.parse(app.globalData.useInfo).nickName,
+        wxUserNickName: app.globalData.useInfo.nickName,
         wxUserOpenId: app.globalData.code,
         content: that.data.mesgVal
       },
@@ -83,11 +83,13 @@ Page({
           title: '留言成功'
         });
 
-        that.requestData();
+        setTimeout(() => {
+          that.requestData();
 
-        that.setData({
-          mesgVal: ''
-        });
+          that.setData({
+            mesgVal: ''
+          });
+        }, 1000)
       }
     });
   },

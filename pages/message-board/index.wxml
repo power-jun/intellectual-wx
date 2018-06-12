@@ -1,6 +1,6 @@
-<scroll-view class='body' scroll-y='true' bindscrolltolower="onReachBottom">
+<view class='body' scroll-y='true' bindscrolltolower="onReachBottom">
   <view class='article'>
-    <textarea placeholder="请输入留言" fixed value='{{mesgVal}}' class='messages-input' maxlength="500" bindinput='msgInput' />
+    <textarea placeholder="请输入留言" value='{{mesgVal}}' class='messages-input' maxlength="500" bindinput='msgInput' />
     <view class='tips'><text>最多可以输入500字</text></view>
     <view class='btn-box submit-mesg'>
       <button bindtap='submitMsg'>提交</button>
@@ -14,4 +14,4 @@
     <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>没有更多留言记录</view>
     <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无留言记录</view>
   </view>
-</scroll-view>
+</view>

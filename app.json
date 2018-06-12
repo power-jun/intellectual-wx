@@ -34,7 +34,7 @@
       {
         "pagePath": "pages/news/index",
         "iconPath": "assets/images/news.png",
-        "selectedIconPath": "assets/images/message-select.png",
+        "selectedIconPath": "assets/images/news-select.png",
         "text": "新闻"
       }
     ]

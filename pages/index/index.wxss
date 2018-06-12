@@ -133,6 +133,7 @@ swiper-item image {
   left: 250rpx;
   top: 150rpx;
   color: #fff;
+  font-weight: bold;
   /* text-shadow: 1px 0.5px #fafafa; */
 }
 
@@ -164,6 +165,7 @@ swiper-item image {
   top: 160rpx;
   z-index: 200;
   color: #fff;
+  font-weight: bold;
 }
 
 .service-items .layer {

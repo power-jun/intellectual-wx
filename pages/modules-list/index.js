@@ -35,12 +35,14 @@ Page({
 
     wx.request({
       url: app.globalData.api + 'city/list.json',
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
         let datas = res.data.data;
         let creditagencyNameArry = [];
         let creditagencyCodeArry = [];
-
+        creditagencyNameArry.push('城市');
+        creditagencyCodeArry.push('');
+        
         for (let i = 0, len = datas.length; i < len; i++) {
           creditagencyNameArry.push(datas[i].name);
           creditagencyCodeArry.push(datas[i].id);
@@ -83,15 +85,13 @@ Page({
     };
 
     wx.showLoading();
-    debugger
     wx.request({
       url: url,
-      method: 'POST',
+      method: 'GET',
       data: params,
       success: function (res) {
         wx.hideLoading();
         if (res.data.recordCount) {
-          debugger
           that.totalPage = res.data.totalPage;
 
           that.data.listData = that.data.listData.concat(res.data.items);

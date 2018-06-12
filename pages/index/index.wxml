@@ -1,4 +1,4 @@
-<view class='body' >
+<view class='body'>
   <view class='article'>
     <view class="swiper-container">
       <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
@@ -20,7 +20,7 @@
     <view class='service-items'>
       <view class='up'>
         <navigator url='/pages/modules-list/index?type=copyright'>
-          <image src='../../assets/images/zhuanli.png'/>
+          <image src='../../assets/images/zhuanli.png' />
           <text>版权登记中心</text>
           <view class='layer'></view>
         </navigator>
@@ -51,8 +51,8 @@
     <view class='recommend'>联系我们</view>
     <view class='contact-us'>
       <view class='width: 100%;height: 350rpx;overflow:hidden;'>
-      <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" style="width: 100%; height: 350px;">
-      </map>
+        <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" style="width: 100%; height: 350px;">
+        </map>
       </view>
       <view class='adress'>
         <text>地址：上海市徐汇区吴中路51号汇豪商务广场1号楼6楼</text>
@@ -81,5 +81,7 @@
         </view>
       </view>
     </view> -->
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <view wx:else>请升级微信版本</view>
   </view>
 </view>
