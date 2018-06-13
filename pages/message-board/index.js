@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     mesgVal: '',
     loadingMoreHidden: true,
     noDataHidden: true,
@@ -17,13 +18,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.requestData();
     this.page = 1;
     this.totalPage = 1;
+    this.submitFlag = true;
+    this.requestData();
   },
 
   requestData: function(){
     let that = this;
+
     let params = {
       pageIndex: this.page,
       sizePerPage: 10
@@ -33,11 +36,12 @@ Page({
 
     wx.request({
       url: app.globalData.api + 'messageBoard/list.json',
-      method: 'POST',
+      method: 'GET',
       data: params,
       success: function (res) {
         wx.hideLoading();
-        if (res.data.recordCount) {
+
+        if (res.data.items.length) {
           that.totalPage = res.data.totalPage;
 
           that.data.messagesListData = that.data.messagesListData.concat(res.data.items);
@@ -57,8 +61,16 @@ Page({
     })
   },
 
-  submitMsg: function() {
+  bindGetUserInfo: function(e) {
     let that = this;
+    if (!app.globalData.useInfo.nickName) {
+      app.globalData.useInfo = e.detail.userInfo;
+    }
+
+    if (!this.submitFlag) {
+      return;
+    }
+    
     if (!this.data.mesgVal) {
       wx.showToast({
         title: '请输入留言',
@@ -67,12 +79,15 @@ Page({
       return;
     }
 
+    this.submitFlag = false;
+
     wx.request({
       url: app.globalData.api + 'messageBoard/add.json',
       header: {
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
       },
       method: 'POST',
+      
       data: {
         wxUserNickName: app.globalData.useInfo.nickName,
         wxUserOpenId: app.globalData.code,
@@ -83,12 +98,15 @@ Page({
           title: '留言成功'
         });
 
-        setTimeout(() => {
-          that.requestData();
+        that.submitFlag = true;
 
+        setTimeout(() => {
           that.setData({
-            mesgVal: ''
+            mesgVal: '',
+            messagesListData: []
           });
+
+          that.requestData();
         }, 1000)
       }
     });

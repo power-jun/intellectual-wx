@@ -52,3 +52,7 @@
   color: #7d7d7d;
   text-align: right;
 }
+
+.no-datas {
+  top: 60%;
+}

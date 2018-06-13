@@ -23,11 +23,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.type = options.type || 'copyright';
+    this.type = options.type;
     this.page = 1;
     this.totalPage = 1;
     this.requestData(this.type);
     this.requestCityData();
+
+    this.url = '';
+    
+    let mername = '';
+
+    if (this.type === 'copyright') {
+      this.url = app.globalData.api + 'copyright/list.json';
+      mername = '版权登记中心';
+    } else if (this.type === 'court') {
+      this.url = app.globalData.api + 'court/list.json';
+      mername = '知识产权法院';
+    } else if (this.type === 'lawyer') {
+      this.url = app.globalData.api + 'lawyer/list.json';
+      mername = '知识产权律师';
+    }
+
+    wx.setNavigationBarTitle({
+      title: mername
+    });
   },
 
   requestCityData() {
@@ -60,23 +79,16 @@ Page({
   requestData(type) {
     let that = this;
     let url = '';
-    let mername = '';
+
 
     if (type === 'copyright') {
       url = app.globalData.api + 'copyright/list.json';
-      mername = '版权登记中心';
     } else if (type === 'court') {
       url = app.globalData.api + 'court/list.json';
-      mername = '知识产权法院';
     } else if (type === 'lawyer') {
       url = app.globalData.api + 'lawyer/list.json';
-      mername = '知识产权律师';
     }
-
-    wx.setNavigationBarTitle({
-      title: mername
-    });
-
+ 
     let params = {
       pageIndex: this.page,
       sizePerPage: 10,
@@ -91,7 +103,7 @@ Page({
       data: params,
       success: function (res) {
         wx.hideLoading();
-        if (res.data.recordCount) {
+        if (res.data.items.length) {
           that.totalPage = res.data.totalPage;
 
           that.data.listData = that.data.listData.concat(res.data.items);
@@ -129,6 +141,12 @@ Page({
       creditagencyCode: creditagencyCode,
       listData: []
     });
+    
+    this.setData({
+      listData: []
+    });
+
+    this.page = 1;
     this.requestData(this.type);
   },
 
@@ -137,6 +155,7 @@ Page({
       listData: []
     });
 
+    this.page = 1;
     this.requestData(this.type);
   },
 

@@ -2,10 +2,9 @@ var app = getApp();
 
 Page({
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     imgUrls: [
       '../../assets/images/banner.jpg',
-      '../../assets/images/banner1.jpg',
+      '../../assets/images/banner1.jpeg',
       '../../assets/images/banner2.jpg'
     ],
     indicatorDots: true,
@@ -55,7 +54,8 @@ Page({
           })
         }
       }
-    })
+    });
+
   },
 
   calling: function () {
@@ -68,10 +68,6 @@ Page({
         console.log("拨打电话失败！")
       }
     })
-  },
-
-  bindGetUserInfo: function (e) {
-    app.globalData.useInfo = e.detail.userInfo;
   },
 
   /**

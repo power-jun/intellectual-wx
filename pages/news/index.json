@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "新闻列表",
   "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#39444d"
+  "navigationBarBackgroundColor": "#39444d",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
 }

@@ -1,5 +1,6 @@
 // pages/modules-list/index.js
 let app = getApp();
+let timer = null;
 
 Page({
 
@@ -9,16 +10,17 @@ Page({
   data: {
     loadingMoreHidden: true,
     noDataHidden: true,
-    newListData: []
+    newListData: [],
+    hasRefesh: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.requestData();
     this.page = 1;
     this.totalPage = 1;
+    this.requestData();
   },
 
   requestData() {
@@ -29,22 +31,31 @@ Page({
       sizePerPage: 10
     };
 
-    wx.showLoading();
+    if (!this.data.hasRefesh) {
+      wx.showLoading();
+    }
 
     wx.request({
       url: app.globalData.api + 'news/list.json',
       method: 'POST',
       data: params,
       success: function (res) {
-        wx.hideLoading();
+        if (!that.data.hasRefesh) {
+          wx.hideLoading();
+        }
 
-        if (res.data.recordCount) {
+        if (res.data.items.length) {
           that.totalPage = res.data.totalPage;
-
-          that.data.newListData = that.data.newListData.concat(res.data.items);
+          if (!that.data.hasRefesh) {
+            that.data.newListData = that.data.newListData.concat(res.data.items);
+          } else {
+            that.data.newListData = res.data.items;
+          }
+          
           that.setData({
             loadingMoreHidden: true,
             noDataHidden: true,
+            hasRefesh: false,
             newListData: that.data.newListData
           });
 
@@ -55,6 +66,7 @@ Page({
         } else {
           that.setData({
             loadingMoreHidden: true,
+            hasRefesh: false,
             noDataHidden: false
           });
         }
@@ -83,5 +95,17 @@ Page({
     this.page++;
 
     this.requestData();
+  },
+
+  onPullDownRefresh: function() {
+    this.page=1;
+    this.setData({
+      hasRefesh: true
+    });
+
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      this.requestData();
+    }, 500)
   }
 })

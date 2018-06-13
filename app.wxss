@@ -7,7 +7,6 @@ page {
   box-sizing: border-box;
 }
 
-
 .btn-box button {
   color: #fff;
   background: #f60;
@@ -19,7 +18,6 @@ page {
   width: 100%;
   height: 40rpx;
 }
-
 
 .arrow {
   display: flex;
@@ -58,7 +56,6 @@ page {
   transform: rotate(135deg);
 }
 
-
 .no-more-goods {
   width: 100%;
   text-align: center;
@@ -69,4 +66,7 @@ page {
 
 .no-datas {
   background: #fff;
+  position: absolute;
+  left: 0;
+  top: 50%;
 }

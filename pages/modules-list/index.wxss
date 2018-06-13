@@ -2,6 +2,11 @@
   height: 100%;
   background: #fff;
 }
+
+.article {
+  height: 100%;
+}
+
 .search-view{
   position:fixed;
   left:0;

@@ -20,7 +20,7 @@ page {
 
 .swiper_box {
   width: 100%;
-  height: 475rpx;
+  height: 400rpx;
 }
 
 swiper-item image {
@@ -104,7 +104,7 @@ swiper-item image {
   padding-top: 20rpx;
   background: #fff;
   color: #333;
-  font-size: 28rpx;
+  font-size: 40rpx;
 }
 
 .service-items {
@@ -134,6 +134,7 @@ swiper-item image {
   top: 150rpx;
   color: #fff;
   font-weight: bold;
+  font-size: 40rpx;
   /* text-shadow: 1px 0.5px #fafafa; */
 }
 
@@ -166,6 +167,7 @@ swiper-item image {
   z-index: 200;
   color: #fff;
   font-weight: bold;
+  font-size: 40rpx;
 }
 
 .service-items .layer {

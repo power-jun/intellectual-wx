@@ -4,7 +4,7 @@
       <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
         <block wx:for="{{imgUrls}}" wx:key="id">
           <swiper-item>
-            <image bindtap="tapBanner" data-id="{{item}}" data-linkUrl="{{item}}" src="{{item}}" class="slide-image" width="750rpx" height="500rpx" />
+            <image bindtap="tapBanner" data-id="{{item}}" data-linkUrl="{{item}}" src="{{item}}" class="slide-image"/>
           </swiper-item>
         </block>
       </swiper>
@@ -81,7 +81,5 @@
         </view>
       </view>
     </view> -->
-    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
-    <view wx:else>请升级微信版本</view>
   </view>
 </view>

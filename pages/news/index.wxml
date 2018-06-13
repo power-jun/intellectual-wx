@@ -1,4 +1,6 @@
-<scroll-view class='body' scroll-y='true' bindscrolltolower="onReachBottom">
+<scroll-view class='body' scroll-y='true' bindscrolltolower="onReachBottom" bindscrolltoupper="onPullDownRefresh">
+<view wx:if="{{hasRefesh}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;margin: 40rpx;">
+      <image src='../../assets/images/load-ring-alt.gif' class='loading-icon'></image><text style='color: #7d7d7d;font-size: 14px'>刷新中...</text></view>
   <view class='new-cont'>
     <view class='mesg-list' hover-class='hover-huise' data-id='{{item.id}}' bindtap='goDetails' wx:for="{{newListData}}" wx:key="{{index}}">
       <view class='head'>{{item.title}}</view>

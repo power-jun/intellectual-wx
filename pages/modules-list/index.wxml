@@ -1,4 +1,4 @@
-<scroll-view class='body' scroll-y='true'>
+<scroll-view class='body' scroll-y='true' bindscrolltolower="onReachBottom">
   <view class='article'>
     <view class="search-view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(39, 36, 36, 1), rgba(39, 36, 36, 0.3))' :( scrollTop<200 ? 'rgba(39, 36, 36,'+(scrollTop/400+0.3) +')' : 'rgba(39, 36, 36,1)')  }} ">
     <view class='city-select arrow'>
@@ -37,7 +37,7 @@
         </view>
       </view>
       <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>更多记录,敬请期待</view>
-      <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无记录</view>
+      <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无数据</view>
     </scroll-view>
   </view>
 </scroll-view>

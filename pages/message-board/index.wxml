@@ -3,7 +3,7 @@
     <textarea placeholder="请输入留言" value='{{mesgVal}}' class='messages-input' maxlength="500" bindinput='msgInput' />
     <view class='tips'><text>最多可以输入500字</text></view>
     <view class='btn-box submit-mesg'>
-      <button bindtap='submitMsg'>提交</button>
+      <button bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo">提交</button>
     </view>
     <view class='huise'></view>
     <view class='mesg-list' wx:for="{{messagesListData}}" wx:key="{{index}}">
