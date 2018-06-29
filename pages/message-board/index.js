@@ -14,15 +14,16 @@ Page({
     messagesListData: []
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onShow: function () {
     this.page = 1;
     this.totalPage = 1;
     this.submitFlag = true;
+    this.setData({
+      messagesListData: []
+    });
     this.requestData();
   },
+
 
   requestData: function(){
     let that = this;

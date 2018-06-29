@@ -12,7 +12,7 @@
 .mesg-list {
   font-size: 14px;
   margin: 0 30rpx;
-  padding: 20rpx 0 ;
+  padding: 20rpx 0;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -27,7 +27,7 @@
 
 .mesg-list .content {
   padding: 20rpx 0;
-  height: 80rpx;
+  height: 40px;
   text-indent: 10px;
   line-height: 23px;
   overflow: hidden;

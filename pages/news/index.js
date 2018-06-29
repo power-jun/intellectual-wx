@@ -14,14 +14,15 @@ Page({
     hasRefesh: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onShow: function() {
     this.page = 1;
     this.totalPage = 1;
+    this.setData({
+      newListData: []
+    });
     this.requestData();
   },
+
 
   requestData() {
     let that = this;
@@ -39,6 +40,7 @@ Page({
       url: app.globalData.api + 'news/list.json',
       method: 'POST',
       data: params,
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function (res) {
         if (!that.data.hasRefesh) {
           wx.hideLoading();
