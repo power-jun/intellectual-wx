@@ -16,6 +16,7 @@ Page({
     creditagencyCodeArry: [],
     loadingMoreHidden: true,
     noDataHidden: true,
+    mername: '',
     listData: []
   },
 
@@ -29,23 +30,21 @@ Page({
     this.requestData(this.type);
     this.requestCityData();
 
-    this.url = '';
-    
     let mername = '';
 
     if (this.type === 'copyright') {
-      this.url = app.globalData.api + 'copyright/list.json';
-      mername = '版权登记中心';
+      mername = '版权登记';
     } else if (this.type === 'court') {
-      this.url = app.globalData.api + 'court/list.json';
       mername = '知识产权法院';
     } else if (this.type === 'lawyer') {
-      this.url = app.globalData.api + 'lawyer/list.json';
-      mername = '知识产权律师';
+      mername = '知识产权律所';
     }
 
     wx.setNavigationBarTitle({
       title: mername
+    });
+    this.setData({
+      mername: mername
     });
   },
 

@@ -24,17 +24,17 @@
           <text>{{item.cityName}}</text>
         </view>
         <view class='agency-company'>
-          <text>版权标题</text>
+          <text></text>
           <text>{{item.title}}</text>
         </view>
         <view class='agency-company'>
-          <text>版权内容</text>
+          <text>网址</text>
           <text>{{item.content}}</text>
         </view>
-        <view class='agency-company no-border'>
+        <!-- <view class='agency-company no-border'>
           <text>创建时间</text>
           <text>{{item.createDate}}</text>
-        </view>
+        </view> -->
       </view>
       <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>更多记录,敬请期待</view>
       <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无数据</view>
